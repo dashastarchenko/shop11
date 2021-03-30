@@ -1,0 +1,9 @@
+<h2> Products </h2>
+
+<div class="text-color" *ngFor="let product of products">{{product.name}}
+  <img [src]="product.img">
+  <p *ngIf="product.description">
+    Описание: {{ product.description }}
+  </p>
+  <button (click)="addProductToCart(product)"><span> + Добавить</span></button>
+</div>

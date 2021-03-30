@@ -1,0 +1,7 @@
+<div *ngFor="let i of items">
+  <p>{{ i.name }}</p>
+  <p *ngIf="i.description">{{ i.description }}</p>
+  <button><i>fa fa-trash</i></button>
+</div>
+
+<button (click)="clearCart()">Очистить корзину</button>
