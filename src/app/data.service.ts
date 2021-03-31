@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {products} from './products';
+import { HttpClient } from '@angular/common/http';
+import {Observable} from "rxjs/index";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import {products} from './products';
 export class DataService {
   items = [] as any;
 
-  constructor() { }
+  constructor( private http: HttpClient ) { }
 
   getProducts(): any {
     return products;
@@ -33,5 +35,10 @@ export class DataService {
       this.items.splice(index, 1);
     }
     console.log(this.items);
+  }
+
+  getShippingPrices(): Observable<Array<object>> {
+    let prices = this.http.get<{type: string, price: number}[]>('../shipping.json');
+    return prices;
   }
 }

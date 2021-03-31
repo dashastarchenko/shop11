@@ -2,13 +2,25 @@ import { Component, OnInit } from '@angular/core';
 // import { products } from '../products';
 import { DataService } from '../data.service';
 
+
+interface IProduct {
+  id: number;
+  name: string;
+  price: number;
+  description?: string;
+  img?: string;
+}
+
+interface IProducts extends Array<IProduct>{}
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
+
 export class ProductListComponent implements OnInit {
-  products = [] as any;
+  products: IProducts = [];
 
   constructor(private dataService: DataService) { }
 

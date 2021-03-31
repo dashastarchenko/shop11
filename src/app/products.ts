@@ -4,7 +4,7 @@ export const products = [
     name: 'Phone XL',
     price: 799,
     description: 'A large phone with one of the best screens',
-    img: '@\assets\img\1.jpg'
+    img: '/assets/img/1.jpg'
   },
   {
     id: 2,
@@ -16,6 +16,5 @@ export const products = [
     id: 3,
     name: 'Phone Standard',
     price: 299,
-    description: ''
   }
 ];

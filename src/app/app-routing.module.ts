@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import {CartComponent} from './cart/cart.component';
 import {MainComponent} from './main/main.component';
 import {LoginComponent} from './login/login.component';
+import {ShippingComponent} from './shipping/shipping.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'main', component: MainComponent},
   { path: 'cart', component: CartComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'shipping', component: ShippingComponent},
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
